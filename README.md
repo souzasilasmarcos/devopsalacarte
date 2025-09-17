@@ -1,47 +1,57 @@
-# DevOps Alacarte 🍽️  
-Provisionamento modular de infraestrutura na **AWS** via **Terraform**, com interface interativa e automações **CI/CD**.  
+# DevOps Alacarte 🍽️
 
-Cada recurso é apresentado como um **card** com formulário dinâmico que gera arquivos `.tfvars.json`, utilizados por workflows automatizados com **GitHub Actions**.  
+Provisionamento modular e inteligente de infraestrutura na **AWS** via **Terraform**, com interface interativa, automações **CI/CD** e integração com práticas de governança e segurança.
 
----
-
-## 📌 Visão Geral  
-**DevOps Alacarte** é um portal interno que permite o provisionamento de recursos AWS de forma **segura, rastreável e padronizada**.  
-Desenvolvedores escolhem serviços **"à la carte"**, conforme suas necessidades, sem depender diretamente da equipe de infraestrutura.  
+Cada recurso é apresentado como um **card** com formulário dinâmico que gera arquivos `.tfvars.json`, utilizados por workflows automatizados com **GitHub Actions**.
 
 ---
 
-## 🚀 Objetivos  
+## Visão Geral
+
+**DevOps Alacarte** é um portal interno que permite o provisionamento de recursos AWS de forma **segura, rastreável, padronizada e auditável**.  
+Desenvolvedores escolhem serviços **"à la carte"**, conforme suas necessidades, sem depender diretamente da equipe de infraestrutura.
+
+O portal foi projetado para atender demandas de provisionamento com **baixa fricção**, mantendo conformidade com padrões corporativos e acelerando entregas em ambientes produtivos.
+
+---
+
+## Objetivos
+
 - Simplificar o provisionamento de recursos AWS  
-- Garantir segurança e rastreabilidade  
+- Garantir segurança, rastreabilidade e conformidade  
 - Padronizar configurações via módulos **Terraform**  
 - Automatizar deploys com **GitHub Actions**  
+- Reduzir dependência direta da equipe de infraestrutura  
+- Integrar com práticas de **Gestão de Acesso**, **Secrets Management** e **Auditoria**
 
 ---
 
-## 🧪 Tecnologias Utilizadas  
+## ecnologias Utilizadas
 
 | Camada         | Tecnologias                |
 |----------------|----------------------------|
 | **Frontend**   | React + Docker             |
-| **Backend**    | Node.js ou FastAPI         |
+| **Backend**    | FastAPI + Python           |
 | **Infra**      | Terraform + Módulos AWS    |
-| **CI/CD**      | GitHub Actions             |
+| **CI/CD**      | GitHub Actions + tfsec     |
+| **Segurança**  | IAM, Secrets Manager, OAuth|
 
 ---
 
-## 🧩 Recursos Disponíveis  
+## Recursos Disponíveis
 
-| Serviço      | Módulo Terraform       | Status     |
-|--------------|------------------------|------------|
-| DynamoDB     | `terraform-aws-dynamodb` | ✅ Ativo    |
-| DocumentDB   | `terraform-aws-documentdb` | ✅ Ativo    |
-| SQS          | `terraform-aws-sqs`       | 🚧 Em teste |
-| SNS          | `terraform-aws-sns`       | 🚧 Em teste |
+| Serviço      | Módulo Terraform               | Status         |
+|--------------|--------------------------------|----------------|
+| DynamoDB     | `terraform-aws-dynamodb`       | ✅ Ativo        |
+| DocumentDB   | `terraform-aws-documentdb`     | ✅ Ativo        |
+| SQS          | `terraform-aws-sqs`            | 🚧 Em teste     |
+| SNS          | `terraform-aws-sns`            | 🚧 Em teste     |
+| Glue         | `terraform-aws-glue`           | 🆕 Em validação |
+| Secrets      | `terraform-aws-secretsmanager` | 🆕 Em validação |
 
 ---
 
-## 📁 Estrutura do Repositório  
+## Estrutura do Repositório
 
 ```plaintext
 devops-alacarte/
@@ -50,24 +60,24 @@ devops-alacarte/
 ├── modules/           # Módulos Terraform
 │   ├── dynamodb/
 │   ├── documentdb/
-│   └── sqs/
+│   ├── sqs/
+│   ├── glue/
+│   └── secretsmanager/
 ├── tfvars-templates/  # Templates JSON
 ├── workflows/         # GitHub Actions
 └── README.md
-```
 
----
-
-## ⚙️ Fluxo de Provisionamento  
+## Fluxo de Provisionamento
 
 1. Usuário acessa o portal e escolhe um recurso  
-2. Preenche formulário dinâmico  
+2. Preenche formulário dinâmico com parâmetros e tags  
 3. Backend gera o arquivo `.tfvars.json`  
 4. GitHub Actions aplica o Terraform com base no módulo e parâmetros  
+5. Provisionamento é registrado e auditado
 
 ---
 
-## 📜 Exemplo de `.tfvars.json`  
+## Exemplo de `.tfvars.json`
 
 ```json
 {
@@ -77,32 +87,36 @@ devops-alacarte/
   "hash_key": "pedido_id",
   "tags": {
     "owner": "silas",
-    "env": "dev"
+    "env": "prod"
   }
 }
-```
+
+## Segurança e Governança
+
+- Autenticação via OAuth corporativo  
+- Integração com Secrets Manager para credenciais sensíveis  
+- Limites de uso por ambiente e por perfil IAM  
+- Auditoria de provisionamentos via CloudTrail e GitHub Logs  
+- Validação de conformidade com tfsec e políticas internas
 
 ---
 
-## 🔐 Segurança e Governança  
-- Autenticação via OAuth  
-- Limites de uso por ambiente  
-- Auditoria de provisionamentos  
+## Futuras Expansões
+
+- Suporte a múltiplas clouds (Azure, GCP)  
+- Provisionamento de arquiteturas completas (ex: VPC + RDS + EC2)  
+- Integração com Slack/Teams para notificações  
+- Painel de auditoria e métricas de uso  
+- Suporte a GMUDs automatizadas com validação de pré-requisitos
 
 ---
 
-## 📈 Futuras Expansões  
-- Suporte a múltiplas clouds  
-- Templates de arquitetura  
-- Integração com Slack/Teams  
+## Templates `.tfvars.json`
 
----
+Crie a pasta `tfvars-templates/` com os seguintes arquivos:
 
-## 🧪 Templates `.tfvars.json`  
+### `dynamodb.tfvars.json`
 
-Crie a pasta `tfvars-templates/` com os seguintes arquivos:  
-
-### `dynamodb.tfvars.json`  
 ```json
 {
   "table_name": "",
@@ -114,24 +128,13 @@ Crie a pasta `tfvars-templates/` com os seguintes arquivos:
     "env": "dev"
   }
 }
-```
 
-### `documentdb.tfvars.json`  
-```json
-{
-  "cluster_identifier": "",
-  "instance_class": "db.r5.large",
-  "engine_version": "4.0.0",
-  "master_username": "",
-  "master_password": "",
-  "tags": {
-    "owner": "",
-    "env": "dev"
-  }
-}
-```
+## plates `.tfvars.json`
 
-### `sqs.tfvars.json`  
+Crie a pasta `tfvars-templates/` com os seguintes arquivos:
+
+### `sqs.tfvars.json`
+
 ```json
 {
   "queue_name": "",
@@ -142,7 +145,57 @@ Crie a pasta `tfvars-templates/` com os seguintes arquivos:
     "env": "dev"
   }
 }
-```
 
----
-✍️ **Autor**: Silas Marcos de Souza
+glue.tfvars.json
+json
+{
+  "job_name": "",
+  "role_arn": "",
+  "script_location": "",
+  "glue_version": "3.0",
+  "tags": {
+    "owner": "",
+    "env": "prod"
+  }
+}
+secretsmanager.tfvars.json
+json
+{
+  "secret_name": "",
+  "description": "",
+  "secret_string": {
+    "username": "",
+    "password": ""
+  },
+  "tags": {
+    "owner": "",
+    "env": "prod"
+  }
+}
+
+Integração via API – Expansão para Ecossistemas DevOps
+A API do DevOps Alacarte atua como componente integrador, permitindo que o portal seja consumido por outras ferramentas e pipelines de automação. Por meio de chamadas HTTP autenticadas, é possível enviar dados em formato .tfvars.json para provisionar recursos como SQS, SNS, Glue, Secrets Manager, entre outros.
+
+Essa abordagem transforma o portal em um hub de automação inteligente, permitindo que o provisionamento seja iniciado por sistemas externos, bots internos, orquestradores ou eventos automatizados.
+
+Exemplo de uso da API
+http
+POST /api/provision
+Content-Type: application/json
+Authorization: Bearer <token>
+json
+{
+  "resource": "sqs",
+  "parameters": {
+    "queue_name": "fila-pedidos",
+    "visibility_timeout_seconds": 30,
+    "message_retention_seconds": 345600,
+    "tags": {
+      "owner": "silas",
+      "env": "prod"
+    }
+  }
+}
+
+
+*** Autor: Silas Marcos de Souza

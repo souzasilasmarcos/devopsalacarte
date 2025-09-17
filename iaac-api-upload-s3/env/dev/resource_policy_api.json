@@ -1,0 +1,22 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Deny",
+        "Principal": "*",
+        "Action": "execute-api:Invoke",
+        "Resource": "arn:aws:execute-api:us-east-1:account-id:35axdmz8mb2/*",
+        "Condition": {
+          "StringNotEquals": {
+            "aws:sourceVpce": "vpce-0aa64cf3a6cedc7b0abcd"
+          }
+        }
+      },
+      {
+        "Effect": "Allow",
+        "Principal": "*",
+        "Action": "execute-api:Invoke",
+        "Resource": "arn:aws:execute-api:us-east-1:account-id:35axdmz8mb2/*"
+      }
+    ]
+  }
