@@ -1,4 +1,4 @@
-# DevOps Alacarte 🍽️
+<img width="800" height="386" alt="image" src="https://github.com/user-attachments/assets/2238c66f-61ef-406e-b956-f4e1808b91cc" /># DevOps Alacarte 🍽️
 
 Provisionamento modular e inteligente de infraestrutura na **AWS** via **Terraform**, com interface interativa, automações **CI/CD** e integração com práticas de governança e segurança.
 
@@ -51,6 +51,8 @@ O portal foi projetado para atender demandas de provisionamento com **baixa fric
 | Secrets      | `terraform-aws-secretsmanager` | 🆕 Em validação |
 
 ---
+
+![image](https://github.com/souzasilasmarcos/devopsalacarte/blob/main/devops-alacarte-prototipo.png)
 
 ## Estrutura do Repositório
 
