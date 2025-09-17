@@ -1,4 +1,6 @@
-<img width="800" height="386" alt="image" src="https://github.com/user-attachments/assets/2238c66f-61ef-406e-b956-f4e1808b91cc" /># DevOps Alacarte 🍽️
+<img width="800" height="386" alt="image" src="https://github.com/user-attachments/assets/2238c66f-61ef-406e-b956-f4e1808b91cc" />
+
+# DevOps Alacarte 🍽️
 
 Provisionamento modular e inteligente de infraestrutura na **AWS** via **Terraform**, com interface interativa, automações **CI/CD** e integração com práticas de governança e segurança.
 
