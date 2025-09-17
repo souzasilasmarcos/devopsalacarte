@@ -198,5 +198,21 @@ json
   }
 }
 
+## 🖼️ Protótipo da Interface – DevOps Alacarte
+
+Abaixo está uma prévia da interface do portal **DevOps Alacarte**, projetada para facilitar o provisionamento de recursos AWS de forma modular e intuitiva:
+
+- **Launch Instance**: Provisiona instâncias EC2
+- **Create Queue**: Cria filas SQS
+- **Create Topic**: Cria tópicos SNS
+- **Today's Menu**: Exibe tópicos de homologação
+
+> O layout foi desenvolvido com foco em usabilidade e agilidade para times de desenvolvimento e operações.
+
+📌 *Imagem: Protótipo do portal DevOps Alacarte*
+
+*(Para visualizar, consulte o arquivo anexado ao repositório ou documentação interna.)*
+
+
 
 *** Autor: Silas Marcos de Souza
