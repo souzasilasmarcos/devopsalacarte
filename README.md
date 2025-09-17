@@ -26,15 +26,16 @@ O portal foi projetado para atender demandas de provisionamento com **baixa fric
 
 ---
 
-## ecnologias Utilizadas
+## Tecnologias Utilizadas
 
-| Camada         | Tecnologias                |
-|----------------|----------------------------|
-| **Frontend**   | React + Docker             |
-| **Backend**    | FastAPI + Python           |
-| **Infra**      | Terraform + Módulos AWS    |
-| **CI/CD**      | GitHub Actions + tfsec     |
-| **Segurança**  | IAM, Secrets Manager, OAuth|
+| Camada         | Tecnologias                                      |
+|----------------|--------------------------------------------------|
+| **Frontend**   | React + JavaScript + Docker                      |
+| **Backend**    | Node.js (Express/Fastify) + API Gateway          |
+| **Infra**      | Terraform + Módulos AWS                          |
+| **CI/CD**      | GitHub Actions + Jenkins + tfsec                 |
+| **Segurança**  | IAM, Secrets Manager, OAuth + API Gateway (Auth) |
+
 
 ---
 
