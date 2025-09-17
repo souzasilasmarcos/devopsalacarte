@@ -213,8 +213,8 @@ devops-alacarte/
 	- **Create Topic** → Cria tópicos SNS  
 	- **Today's Menu** → Lista serviços em homologação  
 
-	![image](https://github.com/souzasilasmarcos/devopsalacarte/blob/main/devops-alacarte-prototipo.png)
-
+  
+  ![Protótipo do portal DevOps Alacarte](https://github.com/souzasilasmarcos/devopsalacarte/blob/main/devops-alacarte-prototipo.png)    
   
 	---
 
