@@ -8,6 +8,15 @@ Cada recurso é apresentado como um card com formulário dinâmico que gera arqu
 
 ---
 
+## Arquitetura – DevOps Alacarte
+
+Esta seção descreve a arquitetura do **DevOps Alacarte**, ilustrando as principais componentes e suas interações.
+
+![Arquitetura DevOps Alacarte](Devops_Alacarte_Diagram.v2.png)
+
+---
+
+
 ## Visão Geral
 **DevOps Alacarte** é um portal interno que permite o provisionamento de recursos AWS de forma **segura, rastreável e padronizada**.  
 Desenvolvedores escolhem serviços "à la carte", conforme suas necessidades, sem depender diretamente da equipe de infraestrutura.
